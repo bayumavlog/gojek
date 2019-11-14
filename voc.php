@@ -8,10 +8,9 @@ if (!file_exists('token')) {
 include ("func.php");
 echo "\n";
 echo "\e[94m            NOT SAFE FOR WORK IF2               \n";
-echo "\e[91m FORMAT NOMOR HP : INDONESIA '62***' , US='1***'\n";
 echo "\e[93m SCRIPT GOJEK AUTO REGISTER + AUTO CLAIM VOUCHER\n";
 echo "\n";
-echo "\e[96m[?] Masukkan Nomor HP Anda (62/1) : ";
+echo "\e[96m[?] Masukkan Nomor HP Anda (US only) : ";
 $nope = trim(fgets(STDIN));
 $register = register($nope);
 if ($register == false)
