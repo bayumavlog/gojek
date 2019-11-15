@@ -8,9 +8,9 @@ if (!file_exists('token')) {
 include ("func.php");
 echo "\n";
 echo "\e[94m            NOT SAFE FOR WORK IF2               \n";
-echo "\e[93m SCRIPT GOJEK BAYU MAVLOG + AUTO CLAIM VOUCHER nji\n";
+echo "\e[93m SUBSCRIB YOUTUBE BAYU MAVLOG + AUTO CLAIM VOUCHER\n";
 echo "\n";
-echo "\e[96m[?] Masukkan Nomor HP Anda (US only) : ";
+echo "\e[96m[?] Masukkan Nomor HP Njing (US only) : ";
 $nope = trim(fgets(STDIN));
 $register = register($nope);
 if ($register == false)
