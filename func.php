@@ -65,7 +65,7 @@ function register($no)
     {
     $nama = nama();
     $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-    $data = '{"email":"'.$email.'@gmail.com","name":"BAYU","phone":"+1'.$no.'","signed_up_country":"ID"}';
+    $data = '{"email":"'.$email.'@gmail.com","nama":".$nama.","phone":"+1'.$no.'","signed_up_country":"ID"}';
     $register = request("/v5/customers", "", $data);
     if ($register['success'] == 1)
         {
