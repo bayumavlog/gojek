@@ -2,11 +2,11 @@
 
 function request($url, $token = null, $data = null, $pin = null){
 $header[] = "Host: api.gojekapi.com";
-$header[] = "User-Agent: okhttp/3.10.0";
+$header[] = "User-Agent: okhttp/3.12.1";
 $header[] = "Accept: application/json";
 $header[] = "Accept-Language: en-ID";
 $header[] = "Content-Type: application/json; charset=UTF-8";
-$header[] = "X-AppVersion: 3.30.2";
+$header[] = "X-AppVersion: 3.40.3";
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
 $header[] = "Connection: keep-alive";
 $header[] = "X-User-Locale: en_ID";
@@ -65,7 +65,7 @@ function register($no)
     {
     $nama = nama();
     $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-    $data = '{"email":"'.$email.'@gmail.com","name":"'.$nama.'","phone":"+'.$no.'","signed_up_country":"ID"}';
+    $data = '{"email":"'.$email.'+11@gmail.com","name":"'.$nama.'","phone":"+'.$no.'","signed_up_country":"ID"}';
     $register = request("/v5/customers", "", $data);
     if ($register['success'] == 1)
         {
