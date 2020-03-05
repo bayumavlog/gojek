@@ -2,27 +2,26 @@
 
 error_reporting(0);
 include ("func.php");
-echo "\n";
-echo "\e            GOJEK VERSION 1.7.5              \n";
-echo "\e SCRIPT GOJEK AUTO REGISTER BAYU DWI DIRGANTARA\n";
+echo "\e                         GOJEK VERSION 1.7.5            \n";
+echo "\e           SCRIPT GOJEK AUTO REGISTER BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
-echo "\e[?] Masukkan Nomor HP Anda (62) : ";
+echo "\e[?] Masukkan Nomor HP Anda : ";
 $nope = trim(fgets(STDIN));
 $cek = cekno($nope);
 if ($cek == false)
     {
-    echo "\e[x] Nomor Telah Terdaftar\n";
+    echo "\e[x] Nomor Telah Terdaftar bambaang\n";
 			goto nope;
     }
   else
     {
 echo "\e[!] Siapkan OTPmu\n";
 sleep(5);
-$register = register('1'.$nope);
+$register = register($nope);
 if ($register == false)
     {
-    echo "\e[x] NOMER TELAH TERDAFTAR!\n";
+    echo "\e[x] NO LU NGAK FRESH BOY!\n";
     }
   else
     {
@@ -36,83 +35,18 @@ if ($register == false)
         goto otp;
         }
       else
-        {      
-			echo "\e[!] Trying to redeem Voucher : G-3VC8BZF !\n";
-        sleep(3);
-        $claim = claim($verif);
-        if ($claim == false)
-            {
-            echo "\e[!]".$claim."\n";
-            sleep(3);
-            echo "\e[!] Trying to redeem Voucher : G-LX3DJYS !\n";
-            sleep(3);
-            goto next;
-            }
-            else{
+        {
+		$h=fopen("newgojek.txt","a");
+		fwrite($h,json_encode(array('token' => $verif, 'voc' => 'gofood gak ada'))."\n");
+		fclose($h); 
+                echo "\e[!] Trying to redeem Reff :G-3VC8BZF !\n";
+                sleep(3);
+            $claim = reff($verif);
+            if ($claim == false){
+            echo "\e[!] SUCCES SILAHKAN LOGIN, DAN CLAIM MANUAL BOSKU\n";
+            }else{
                 echo "\e[+] ".$claim."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : G-RFT47YQ !\n";
-                sleep(3);
-                goto ride;
             }
-            next:
-            $claim = claim1($verif);
-            if ($claim == false) {
-                echo "\e[!]".$claim['data']['message']."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : G-KNRGWK5 !\n";
-                sleep(3);
-                goto next1;
-            }
-            else{
-                echo "\e[+] ".$claim."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : G-MPW4WBM !\n";
-                sleep(3);
-                goto ride;
-            }
-            next1:
-            $claim = claim2($verif);
-            if ($claim == false) {
-                echo "\e[!]".$claim['errors'][0]['message']."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : G-6ZWHN96 !\n";
-                sleep(3);
-                goto ride;
-            }
-          else
-            {
-            echo "\e[+] ".$claim . "\n";
-            sleep(3);
-            echo "\e[!] Trying to redeem Voucher : G-78BZSNB !\n";
-            sleep(3);
-            goto ride;
-            }
-            ride:
-            $claim = ride($verif);
-            if ($claim == false ) {
-                echo "\e[!]".$claim['errors'][0]['message']."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : G-G3S8BKX !\n";
-                sleep(3);
-
-            }
-            else{
-                echo "\e[+] ".$claim."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : G-X4K42DC !\n";
-                sleep(3);
-                goto pengen;
-            }
-            pengen:
-            $claim = cekvocer($verif);
-            if ($claim == false ) {
-                echo "\VOUCHER INVALID/GAGAL REDEEM\n";
-            }
-            else{
-                echo "\e[+] ".$claim."\n";
-                
-        }
     }
     }
     }
