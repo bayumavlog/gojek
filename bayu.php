@@ -2,8 +2,8 @@
 
 error_reporting(0);
 include ("func.php");
-toilet -f slant --gay  "BAYU MAVLOG"
-echo "\e                   GOJEK VERSION 1.7.5            \n";
+        toilet -f slant --gay  "BAYU MAVLOG"
+echo "\033[32;1m             GOJEK VERSION 1.7.5           :" 
 echo "\e       SCRIPT REGISTRASI GOJEK BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
