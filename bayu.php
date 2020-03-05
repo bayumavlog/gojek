@@ -2,7 +2,7 @@
 
 error_reporting(0);
 include ("func.php");
-echo "\033[32;1m GOJEK VERSION 1.7.5:" 
+echo "\e            GOJEK VERSION 1.7.1            \n"; 
 echo "\e SCRIPT GOJEK AUTO REGISTER + AUTO CLAIM VOUCHER\n";
 echo "\n";
 nope:
