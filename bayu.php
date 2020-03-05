@@ -2,7 +2,7 @@
 
 error_reporting(0);
 include ("func.php");
-toilet -f slant --gay "BAYU MAVLOG"
+toilet -f slant --gay  "BAYU MAVLOG"
 echo "\e                   GOJEK VERSION 1.7.5            \n";
 echo "\e       SCRIPT REGISTRASI GOJEK BAYU DWI DIRGANTARA\n";
 echo "\n";
