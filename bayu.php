@@ -37,14 +37,14 @@ if ($register == false)
         }
       else
         {      
-			echo "\e[!] Trying to redeem Voucher : G-FNF7B6D !\n";
+			echo "\e[!] Trying to redeem Voucher : G-3VC8BZF !\n";
         sleep(3);
         $claim = claim($verif);
         if ($claim == false)
             {
             echo "\e[!]".$claim."\n";
             sleep(3);
-            echo "\e[!] Trying to redeem Voucher : G-26YPXBT !\n";
+            echo "\e[!] Trying to redeem Voucher : G-LX3DJYS !\n";
             sleep(3);
             goto next;
             }
