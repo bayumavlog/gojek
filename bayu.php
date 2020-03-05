@@ -7,7 +7,7 @@ echo "\e            GOJEK VERSION 1.7.5              \n";
 echo "\e SCRIPT GOJEK AUTO REGISTER BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
-echo "\e[?] Masukkan Nomor HP Anda (1) : ";
+echo "\e[?] Masukkan Nomor HP Anda (62) : ";
 $nope = trim(fgets(STDIN));
 $cek = cekno($nope);
 if ($cek == false)
