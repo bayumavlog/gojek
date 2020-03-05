@@ -22,7 +22,7 @@ sleep(5);
 $register = register('1'.$nope);
 if ($register == false)
     {
-    echo "\e[x] TES CLAIM MANUAL BOSKU!\n";
+    echo "\e[x] NOMER TELAH TERDAFTAR!\n";
     }
   else
     {
