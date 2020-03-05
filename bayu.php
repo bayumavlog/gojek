@@ -2,8 +2,8 @@
 
 error_reporting(0);
 include ("func.php");
-echo "\033[32;1m GOJEK VERSION 1.7.5           :" 
-echo "\e          SCRIPT REGISTRASI GOJEK BAYU DWI DIRGANTARA\n";
+echo "\033[32;1m GOJEK VERSION 1.7.5:" 
+echo "\e SCRIPT GOJEK AUTO REGISTER + AUTO CLAIM VOUCHER\n";
 echo "\n";
 nope:
 echo "\e[?] Masukkan Nomor HP Anda : ";
