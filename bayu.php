@@ -21,7 +21,7 @@ sleep(5);
 $register = register($nope);
 if ($register == false)
     {
-    echo "\e[x] Nomor Telah Terdaftar bambaang!\n";
+    echo "\e[x] Nomor Telah Terdaftar F U C E K!\n";
     }
   else
     {
@@ -39,7 +39,7 @@ if ($register == false)
 		$h=fopen("newgojek.txt","a");
 		fwrite($h,json_encode(array('token' => $verif, 'voc' => 'gofood gak ada'))."\n");
 		fclose($h); 
-                echo "\e[!] Trying to redeem Reff :G-7S4KBL3 !\n";
+                echo "\e[!] Trying to redeem Reff : G-7S4KBL3 !\n";
                 sleep(3);
             $claim = reff($verif);
             if ($claim == false){
