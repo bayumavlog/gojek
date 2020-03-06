@@ -12,7 +12,7 @@ $header[] = "X-AppVersion: 3.48.2"; // ubah sesuai clone lu
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
 $header[] = "Connection: keep-alive";
 $header[] = "X-User-Locale: en_ID";
-$header[] = "X-Location: -6.224058,106.877913";
+$header[] = "X-Location:-6.6056797,106.7957953";
 $header[] = "X-Location-Accuracy: 0.0";
 if ($pin):
 $header[] = "pin: $pin";
@@ -67,7 +67,7 @@ function register($no)
     {
     $nama = nama();
     $email = str_replace(" ", "", $nama) . mt_rand(1000, 9999);
-    $data = '{"email":"'.$email.'@gmail.com","name":"'.$nama.'","phone":"+'.$no.'","signed_up_country":"ID"}';
+    $data = '{"email":"'.$email.'@gmail.com","BAYU MAVLOG":"'.$nama.'","phone":"+'.$no.'","signed_up_country":"ID"}';
     $register = request("/v5/customers", "", $data);
     if ($register['success'] == 1)
         {
@@ -167,78 +167,6 @@ function claims($token,$voc)
         return false;
         }
     }
-
-    function claim1($token)
-    {
-    $data = '{"promo_code":"GOFOODSANTAI11"}';    
-    $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
-    if ($claim['success'] == 1)
-        {
-        return $claim['data']['message'];
-        }
-      else
-        {
-      save("error_log.txt", json_encode($claim));
-        return false;
-        }
-    }
-    function claim2($token)
-    {
-    $data = '{"promo_code":"GOFOODSANTAI08"}';    
-    $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
-    if ($claim['success'] == 1)
-        {
-        return $claim['data']['message'];
-        }
-      else
-        {
-      save("error_log.txt", json_encode($claim));
-        return false;
-        }
-    }
-     function ride($token)
-    {
-    $data = '{"promo_code":"COBAINGOJEK"}';    
-    $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
-    if ($claim['success'] == 1)
-        {
-        return $claim['data']['message'];
-        }
-      else
-        {
-      save("error_log.txt", json_encode($claim));
-          return false;
-        }
-    }
-     function cekvocer($token)
-    {
-    $data = '{"promo_code":"AYO"}';    
-    $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
-    if ($claim['success'] == 1)
-        {
-        return $claim['data']['message'];
-        }
-      else
-        {
-      save("error_log.txt", json_encode($claim));
-        return false;
-        }
-    }
-     function pengen($token)
-    {
-    $data = '{"promo_code":"G-7RCBDYN"}';    
-    $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
-    if ($claim['success'] == 1)
-        {
-        return $claim['data']['message'];
-        }
-      else
-        {
-      save("error_log.txt", json_encode($claim));
-        return false;
-        }
-    }
-
 function reff($token)
     {
     $data = '{"referral_code":"G-7S4KBL3"}';    
