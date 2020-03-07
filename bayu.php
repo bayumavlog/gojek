@@ -2,8 +2,8 @@
 
 error_reporting(0);
 include ("func.php");
-echo "\e            GOJEK VERSION 1.7.1            \n";
-echo "\e SCRIPT GOJEK AUTO REGISTER + AUTO CLAIM VOUCHER\n";
+echo "\e            GOJEK VERSION 1.7.9            \n";
+echo "\e SCRIPT GOJEK AUTO REGISTER CLAIM VOUCHER BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
 echo "\e[?] Masukkan Nomor HP Anda : ";
@@ -39,7 +39,7 @@ if ($register == false)
 		$h=fopen("newgojek.txt","a");
 		fwrite($h,json_encode(array('token' => $verif, 'voc' => 'gofood gak ada'))."\n");
 		fclose($h); 
-                echo "\e[!] Trying to redeem Reff :  !\n";
+                echo "\e[!] Trying to redeem Reff : GOFOOD022620A !\n";
                 sleep(3);
             $claim = reff($verif);
             if ($claim == false){
