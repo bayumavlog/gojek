@@ -2,7 +2,7 @@
 
 error_reporting(0);
 include ("func.php");
-echo "\e            GOJEK VERSION 1.6.2            \n";
+echo "\e            GOJEK VERSION 1.7.1            \n";
 echo "\e SCRIPT GOJEK AUTO REGISTER + AUTO CLAIM VOUCHER\n";
 echo "\n";
 nope:
@@ -18,7 +18,7 @@ if ($cek == false)
     {
 echo "\e[!] Siapkan OTPmu\n";
 sleep(5);
-$register = register('1'.$nope);
+$register = register($nope);
 if ($register == false)
     {
     echo "\e[x] Failed Get OTP!\n";
@@ -39,9 +39,9 @@ if ($register == false)
 		$h=fopen("newgojek.txt","a");
 		fwrite($h,json_encode(array('token' => $verif, 'voc' => 'gofood gak ada'))."\n");
 		fclose($h); 
-                echo "\e[!] Trying to redeem Voucher : GOFOOD022620A !\n";
+                echo "\e[!] Trying to redeem Reff : GOFOOD022620A !\n";
                 sleep(3);
-            $claim = cekvocer($verif);
+            $claim = reff($verif);
             if ($claim == false){
             echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
             }else{
@@ -50,3 +50,6 @@ if ($register == false)
     }
     }
     }
+
+
+?>
