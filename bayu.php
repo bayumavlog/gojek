@@ -41,7 +41,7 @@ if ($register == false)
 		fclose($h); 
                 echo "\e[!] Trying to redeem Voucher : GOFOOD022620A !\n";
                 sleep(3);
-            $claim = cekvocer($verif);
+            $claim = pengen($verif);
             if ($claim == false){
             echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
             }else{
