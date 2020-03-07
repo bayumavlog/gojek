@@ -2,8 +2,8 @@
 
 error_reporting(0);
 include ("func.php");
-echo "\e                         GOJEK VERSION 1.7.6            \n";
-echo "\e           SCRIPT GOJEK AUTO REGISTER BAYU DWI DIRGANTARA\n";
+echo "\e            GOJEK VERSION 1.7.1            \n";
+echo "\e SCRIPT GOJEK AUTO REGISTER + AUTO CLAIM VOUCHER\n";
 echo "\n";
 nope:
 echo "\e[?] Masukkan Nomor HP Anda : ";
@@ -21,7 +21,7 @@ sleep(5);
 $register = register($nope);
 if ($register == false)
     {
-    echo "\e[x] Nomor Telah Terdaftar F U C E K !\n";
+    echo "\e[x] Failed Get OTP!\n";
     }
   else
     {
@@ -39,11 +39,11 @@ if ($register == false)
 		$h=fopen("newgojek.txt","a");
 		fwrite($h,json_encode(array('token' => $verif, 'voc' => 'gofood gak ada'))."\n");
 		fclose($h); 
-                echo "\e[!] Trying to redeem Reff : GOFOOD022620A !\n";
+                echo "\e[!] Trying to redeem Reff :  !\n";
                 sleep(3);
             $claim = reff($verif);
             if ($claim == false){
-            echo "\e[!] SILAHKAN LOGIN, DAN CLAIM MANUAL BOSKU\n";
+            echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
             }else{
                 echo "\e[+] ".$claim."\n";
             }
