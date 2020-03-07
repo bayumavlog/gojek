@@ -3,7 +3,7 @@
 error_reporting(0);
 include ("func.php");
 echo "\e            GOJEK VERSION 1.7.2            \n";
-echo "\e SCRIPT GOJEK AUTO REGISTER + AUTO CLAIM VOUCHER\n";
+echo "\e SCRIPT GOJEK AUTO REGISTER BAYU DWI DIRGANTAR\n";
 echo "\n";
 nope:
 echo "\e[?] Masukkan Nomor HP Anda (62) : ";
@@ -11,7 +11,7 @@ $nope = trim(fgets(STDIN));
 $cek = cekno($nope);
 if ($cek == false)
     {
-    echo "\e[x] Nomor Telah Terdaftar\n";
+    echo "\e[x] Nomor Telah Terdaftar F U C E K\n";
 			goto nope;
     }
   else
