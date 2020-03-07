@@ -21,7 +21,7 @@ sleep(5);
 $register = register($nope);
 if ($register == false)
     {
-    echo "\e[x] Failed Get OTP!\n";
+    echo "\e[x] Failed Get OTP BRO!\n";
     }
   else
     {
@@ -39,7 +39,7 @@ if ($register == false)
 		$h=fopen("newgojek.txt","a");
 		fwrite($h,json_encode(array('token' => $verif, 'voc' => 'gofood gak ada'))."\n");
 		fclose($h); 
-                echo "\e[!] Trying to redeem Reff : GOFOOD022620A !\n";
+                echo "\e[!] Trying to redeem Reff :GOFOOD022620A!\n";
                 sleep(3);
             $claim = reff($verif);
             if ($claim == false){
