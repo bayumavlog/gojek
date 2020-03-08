@@ -18,7 +18,7 @@ if ($cek == false)
     {
 echo "\e[!] Siapkan OTPmu\n";
 sleep(5);
-$register = register('62'.$nope);
+$register = register($nope);
 if ($register == false)
     {
     echo "\e[x] Failed Get OTP!\n";
