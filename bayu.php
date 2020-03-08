@@ -6,7 +6,7 @@ echo "\e            GOJEK VERSION 1.8.0              \n";
 echo "\e SCRIPT GOJEK AUTO CLAIM ALL PROMO BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
-echo "\e[?] Masukkan Nomor HP Anda (1) : ";
+echo "\e[?] Masukkan Nomor HP Anda (62) : ";
 $nope = trim(fgets(STDIN));
 $cek = cekno($nope);
 if ($cek == false)
@@ -18,7 +18,7 @@ if ($cek == false)
     {
 echo "\e[!] Siapkan OTPmu\n";
 sleep(5);
-$register = register('1'.$nope);
+$register = register('62'.$nope);
 if ($register == false)
     {
     echo "\e[x] Failed Get OTP!\n";
