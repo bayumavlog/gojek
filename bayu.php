@@ -36,13 +36,8 @@ if ($register == false)
         }
       else
         {
-	    $claims = food($verif);
-		echo "\e[!] Trying to redeem Voucher : GOFOOD022620A !\n";
-		$h=fopen("".$claims.".txt","a");
-		fwrite($h,json_encode(array('token' => $verif, 'voc' => $claims))."\n");
-		fclose($h); 
-        sleep(3);
-        $claim = claims($verif,$claims);
+	echo "\e[!] Trying to redeem Voucher : GOFOOD022620A !\n";
+        $claim = claim1($verif);
         if ($claim == false){
             echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
 			      sleep(3);
@@ -60,12 +55,12 @@ if ($register == false)
             if ($claim == false){
             echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
 			      sleep(3);
-            echo "\e[!] Trying to redeem Voucher : GOFOOD022620A !\n";
+            echo "\e[!] Trying to redeem Voucher : COBAGORIDE !\n";
             sleep(3);
             }else{
                 echo "\e[+] ".$claim."\n";
 				    sleep(3);
-                echo "\e[!] Trying to redeem Voucher : GOFOOD022620A !\n";
+                echo "\e[!] Trying to redeem Voucher : COBAGOCAR !\n";
                 sleep(3);
                 goto pengen;
             }
