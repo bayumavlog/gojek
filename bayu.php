@@ -2,7 +2,7 @@
 
 error_reporting(0);
 include ("func.php");
-echo "\e            GOJEK VERSION 1.8.0              \n";
+echo "\e            GOJEK VERSION 1.8.1              \n";
 echo "\e SCRIPT GOJEK AUTO CLAIM ALL PROMO BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
@@ -41,7 +41,7 @@ if ($register == false)
         if ($claim == false){
             echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
 			      sleep(3);
-            echo "\e[!] Trying to redeem Voucher : COBAGOFOODO32OA !\n";
+            echo "\e[!] Trying to redeem Voucher : COBAGOFOOD090320A !\n";
 			      goto ride;
             }else{
                 echo "\e[+] ".$claim."\n";
@@ -55,12 +55,12 @@ if ($register == false)
             if ($claim == false){
             echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
 			      sleep(3);
-            echo "\e[!] Trying to redeem Voucher : COBAGOFOODO32OA !\n";
+            echo "\e[!] Trying to redeem Voucher : COBAGOCAR !\n";
             sleep(3);
             }else{
                 echo "\e[+] ".$claim."\n";
 				    sleep(3);
-                echo "\e[!] Trying to redeem Voucher : COBAGOCAR !\n";
+                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD090320A !\n";
                 sleep(3);
                 goto pengen;
             }
