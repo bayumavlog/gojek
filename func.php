@@ -155,7 +155,7 @@ function verif($otp, $token)
 
 function claims($token,$voc)
     {
-    $data = '{"promo_code":"COBAGOFOODO32OA"}';   
+    $data = '{"promo_code":" COBAGOFOOD090320A "}';   
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -184,7 +184,7 @@ function claims($token,$voc)
     }
     function claim2($token)
     {
-    $data = '{"promo_code":"COBAGOFOODO32OA"}';    
+    $data = '{"promo_code":" COBAGOFOOD090320A "}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
