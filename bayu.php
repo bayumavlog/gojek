@@ -41,7 +41,7 @@ if ($register == false)
         if ($claim == false){
             echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
 			      sleep(3);
-            echo "\e[!] Trying to redeem Voucher : COBAGORIDE !\n";
+            echo "\e[!] Trying to redeem Voucher : COBAGOFOODO32OA !\n";
 			      goto ride;
             }else{
                 echo "\e[+] ".$claim."\n";
@@ -55,7 +55,7 @@ if ($register == false)
             if ($claim == false){
             echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
 			      sleep(3);
-            echo "\e[!] Trying to redeem Voucher : COBAGORIDE !\n";
+            echo "\e[!] Trying to redeem Voucher : COBAGOFOODO32OA !\n";
             sleep(3);
             }else{
                 echo "\e[+] ".$claim."\n";
