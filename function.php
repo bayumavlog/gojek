@@ -12,8 +12,8 @@ $header[] = "X-AppVersion: 3.46.1"; // ubah sesuai clone lu
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
 $header[] = "Connection: keep-alive";
 $header[] = "X-User-Locale: en_ID";
-$header[] = "X-Location: -6.224058,106.877913";
-$header[] = "X-Location-Accuracy: 0.0";
+$header[] = "X-Location: -7.2474107,112.7492658";
+$header[] = "X-Location-Accuracy: 3.0";
 if ($pin):
 $header[] = "pin: $pin";
     endif;
@@ -198,7 +198,7 @@ function claims($token,$voc)
     }
      function ride($token)
     {
-    $data = '{"promo_code":"COBAGORIDE"}';    
+    $data = '{"promo_code":"COBAINGORIDE"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -212,7 +212,7 @@ function claims($token,$voc)
     }
      function cekvocer($token)
     {
-    $data = '{"promo_code":"COBAGOCAR"}';    
+    $data = '{"promo_code":"COBAGOCARPAY"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -241,7 +241,7 @@ function claims($token,$voc)
 
 function reff($token)
     {
-    $data = '{"referral_code":"GOFOOD022620A"}';    
+    $data = '{"referral_code":"COBAGORIDEPAY"}';    
     $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
     if ($claim['success'] == 1)
         {
