@@ -239,18 +239,45 @@ function claims($token,$voc)
         }
     }
 
-function claim($token)
-	{
-	$data = '{"promo_code":"COBAGOFOOD090320A"}';
-	$claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
-	if ($claim['success'] == 1)
-		{
-		return $claim['data']['message'];
-		}
-	  else
-		{
+function reff($token)
+    {
+    $data = '{"referral_code":"COBAGOFOOD090320A"}';    
+    $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
+    if ($claim['success'] == 1)
+        {
+        return $claim['data']['message'];
+        }
+      else
+        {
       save("error_log.txt", json_encode($claim));
-		return false;
-		}
+        return false;
+        }
+    }
+	
+	function cekno($no)
+    {
+	$token = '5993944e-50c7-4f93-bb81-2f2acb206c7a';
+    $claim = request("/wallet/qr-code?phone_number=%2B".$no, $token, null);
+    if ($claim['data'] == null)
+        {
+		return true;
+        }
+      else
+        {
+      return false;
+        }
+    }
+	function food($token)
+	{
+	$claim = request("/v2/customer/cards/food", $token, null);
+$food = json_decode(json_encode($claim));
+foreach($food->data->cards as $item){
+if($item->content->actions[0]->description == "Promo 1"){
+$food = $item->content->actions[0]->deep_link;
+$food = explode("code=", trim($food));
+$food = trim($food[1]);
+return $food;
+	}
+	}
 	}
 ?>
