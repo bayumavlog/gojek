@@ -2,11 +2,11 @@
 
 error_reporting(0);
 include ("function.php");
-echo "\e            GOJEK VERSION 1.8.3              \n";
-echo "\e SCRIPT GOJEK AUTO CLAIM ALL PROMO BAYU DWI DIRGANTARA\n";
+echo "\e            GOJEK VERSION 1.8.4              \n";
+echo "\e SCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
-echo "\e[?] Masukkan Nomor HP Anda : ";
+echo "\e[?] Masukkan Nomor HP Anda wanji 628*** : ";
 $nope = trim(fgets(STDIN));
 $cek = cekno($nope);
 if ($cek == false)
@@ -21,7 +21,7 @@ sleep(5);
 $register = register($nope);
 if ($register == false)
     {
-    echo "\e[x] Failed Get OTP!\n";
+    echo "\e[x] Gagal Mendapatkan OTP! Harap Gunakan Nomer Yang Belum Terdaftar DI GOJEK\n";
     }
   else
     {
@@ -36,38 +36,38 @@ if ($register == false)
         }
       else
         {
-	echo "\e[!] Trying to redeem Voucher : COBAGORIDEPAY !\n";
+	echo "\e[!] Mencoba Claim  Voucher : COBAGOFOOD090320A !\n";
         $claim = claim1($verif);
         if ($claim == false){
-            echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
+            echo "\e[!] Gagal claim otomatis, Silahkan Claim Manually\n";
 			      sleep(3);
-            echo "\e[!] Trying to redeem Voucher : COBAGOFOOD090320A !\n";
+            echo "\e[!] Mencoba Claim Voucher : COBAINGORIDEPAY !\n";
 			      goto ride;
             }else{
                 echo "\e[+] ".$claim."\n";
 				    sleep(3);
-                echo "\e[!] Trying to redeem Voucher : COBAGOCARPAY !\n";
+                echo "\e[!] Mencoba Claim Voucher : COBAGOFOOD090320A !\n";
                 sleep(3);
                 goto ride;
             }
             ride:
             $claim = ride($verif);
             if ($claim == false){
-            echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
+            echo "\e[!] Gagal claim otomatis, Silahkan Claim Manually\n";
 			      sleep(3);
-            echo "\e[!] Trying to redeem Voucher :COBAINGORIDE !\n";
+            echo "\e[!] Mencoba Claim Voucher :COBAINGORIDE !\n";
             sleep(3);
             }else{
                 echo "\e[+] ".$claim."\n";
 				    sleep(3);
-                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD090320A !\n";
+                echo "\e[!] Mencoba Claim Voucher : COBAINGORIDEPAY !\n";
                 sleep(3);
                 goto pengen;
             }
             pengen:
             $claim = cekvocer($verif);
             if ($claim == false ) {
-            echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
+            echo "\e[!] Gagal claim otomatis, Silahkan Claim Manually\n";
            }
 		  else
 			{
