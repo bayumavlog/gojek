@@ -12,7 +12,7 @@ $header[] = "X-AppVersion: 3.46.1"; // ubah sesuai clone lu
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
 $header[] = "Connection: keep-alive";
 $header[] = "X-User-Locale: en_ID";
-$header[] = "X-Location: -7.2474107,112.7492658";
+$header[] = "X-Location: -6.207248016999255,106.79767673781015";
 $header[] = "X-Location-Accuracy: 3.0";
 if ($pin):
 $header[] = "pin: $pin";
@@ -226,7 +226,7 @@ function claims($token,$voc)
     }
      function pengen($token)
     {
-    $data = '{"promo_code":"GOFOOD022620A"}';    
+    $data = '{"promo_code":"COBAGOCARPAY"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -239,45 +239,18 @@ function claims($token,$voc)
         }
     }
 
-function reff($token)
-    {
-    $data = '{"referral_code":"COBAGORIDEPAY"}';    
-    $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
-    if ($claim['success'] == 1)
-        {
-        return $claim['data']['message'];
-        }
-      else
-        {
-       save("error_log.txt", json_encode($claim));
-        return false;
-        }
-    }
-	
-	function cekno($no)
-    {
-	$token = '5993944e-50c7-4f93-bb81-2f2acb206c7a';
-    $claim = request("/wallet/qr-code?phone_number=%2B".$no, $token, null);
-    if ($claim['data'] == null)
-        {
-		return true;
-        }
-      else
-        {
-      return false;
-        }
-    }
-	function food($token)
+function claim($token)
 	{
-	$claim = request("/v2/customer/cards/food", $token, null);
-$food = json_decode(json_encode($claim));
-foreach($food->data->cards as $item){
-if($item->content->actions[0]->description == "Promo 1"){
-$food = $item->content->actions[0]->deep_link;
-$food = explode("code=", trim($food));
-$food = trim($food[1]);
-return $food;
-	}
-	}
+	$data = '{"promo_code":"COBAGOFOOD090320A"}';
+	$claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
+	if ($claim['success'] == 1)
+		{
+		return $claim['data']['message'];
+		}
+	  else
+		{
+      save("error_log.txt", json_encode($claim));
+		return false;
+		}
 	}
 ?>
