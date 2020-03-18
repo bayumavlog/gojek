@@ -3,7 +3,7 @@
 error_reporting(0);
 include ("function.php");
 echo "\033[33;1m         GOJEK VERSION 1.8.4              \n";
-echo "\033[35;1m2SCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
+echo "\033[35;1mSCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
 echo "\033[32;1m[?] Masukkan Nomor HP Anda wanji 628*** : ";
@@ -21,7 +21,7 @@ sleep(5);
 $register = register($nope);
 if ($register == false)
     {
-    echo "\033[35;1m2[x] Gagal Mendapatkan OTP! Harap Gunakan Nomer Yang Belum Terdaftar DI GOJEK\n";
+    echo "\033[35;1m[x] Gagal Mendapatkan OTP! Harap Gunakan Nomer Yang Belum Terdaftar DI GOJEK\n";
     }
   else
     {
