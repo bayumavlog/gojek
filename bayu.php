@@ -2,6 +2,7 @@
 
 error_reporting(0);
 include ("function.php");
+toilet -f slant --gay "BAYU MAVLOG"
 echo "\033[33;1m         GOJEK VERSION 1.8.4              \n";
 echo "\033[36;1m SCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
 echo "\n";
@@ -16,7 +17,7 @@ if ($cek == false)
     }
   else
     {
-echo "\e[!] Siapkan OTPmu\n";
+echo "\033[31;1m0[!] Siapkan OTPmu\n";
 sleep(5);
 $register = register($nope);
 if ($register == false)
@@ -36,38 +37,38 @@ if ($register == false)
         }
       else
         {
-	echo "\e[!] Mencoba Claim  Voucher : COBAGOFOOD090320A !\n";
+	echo "\033[31;1m0[!] Mencoba Claim  Voucher : COBAGOFOOD090320A !\n";
         $claim = claim1($verif);
         if ($claim == false){
-            echo "\e[!] Gagal claim otomatis, Silahkan Claim Manually\n";
+            echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually\n";
 			      sleep(3);
-            echo "\e[!] Mencoba Claim Voucher : COBAINGORIDEPAY !\n";
+            echo "\033[31;1m0[!] Mencoba Claim Voucher : COBAINGORIDEPAY !\n";
 			      goto ride;
             }else{
                 echo "\e[+] ".$claim."\n";
 				    sleep(3);
-                echo "\e[!] Mencoba Claim Voucher : COBAGOFOOD090320A !\n";
+                echo "\033[31;1m0[!] Mencoba Claim Voucher : COBAGOFOOD090320A !\n";
                 sleep(3);
                 goto ride;
             }
             ride:
             $claim = ride($verif);
             if ($claim == false){
-            echo "\e[!] Gagal claim otomatis, Silahkan Claim Manually\n";
+            echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually\n";
 			      sleep(3);
-            echo "\e[!] Mencoba Claim Voucher :COBAINGORIDE !\n";
+            echo "\033[31;1m0[!] Mencoba Claim Voucher :COBAINGORIDE !\n";
             sleep(3);
             }else{
                 echo "\e[+] ".$claim."\n";
 				    sleep(3);
-                echo "\e[!] Mencoba Claim Voucher : COBAINGORIDEPAY !\n";
+                echo "\033[31;1m0[!] Mencoba Claim Voucher : COBAINGORIDEPAY !\n";
                 sleep(3);
                 goto pengen;
             }
             pengen:
             $claim = cekvocer($verif);
             if ($claim == false ) {
-            echo "\e[!] Gagal claim otomatis, Silahkan Claim Manually\n";
+            echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually\n";
            }
 		  else
 			{
