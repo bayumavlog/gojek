@@ -2,9 +2,8 @@
 
 error_reporting(0);
 include ("function.php");
-echo "\033[35;1m2          BAYU MAVLOG"
 echo "\033[33;1m         GOJEK VERSION 1.8.4              \n";
-echo "\033[36;1m SCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
+echo "\033[35;1m2SCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
 echo "\033[32;1m[?] Masukkan Nomor HP Anda wanji 628*** : ";
