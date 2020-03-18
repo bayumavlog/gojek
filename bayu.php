@@ -16,7 +16,7 @@ if ($cek == false)
     }
   else
     {
-echo "\033[31;1m0[!] Siapkan OTPmu\n";
+echo "\033[31;1m[!] Siapkan OTPmu\n";
 sleep(5);
 $register = register($nope);
 if ($register == false)
@@ -26,7 +26,7 @@ if ($register == false)
   else
     {
     otp:
-    echo "\e[!] Masukkan Kode Verifikasi (OTP) : ";
+    echo "\033[33;1m [!] Masukkan Kode Verifikasi (OTP) : ";
     $otp = trim(fgets(STDIN));
     $verif = verif($otp, $register);
     if ($verif == false)
@@ -36,17 +36,17 @@ if ($register == false)
         }
       else
         {
-	echo "\033[31;1m0[!] Mencoba Claim  Voucher : COBAGOFOOD090320A !\n";
+	echo "\033[31;1m[!] Mencoba Claim  Voucher : COBAGOFOOD090320A !\n";
         $claim = claim1($verif);
         if ($claim == false){
             echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually\n";
 			      sleep(3);
-            echo "\033[31;1m0[!] Mencoba Claim Voucher : COBAINGORIDEPAY !\n";
+            echo "\033[31;1m[!] Mencoba Claim Voucher : COBAINGORIDEPAY !\n";
 			      goto ride;
             }else{
                 echo "\e[+] ".$claim."\n";
 				    sleep(3);
-                echo "\033[31;1m0[!] Mencoba Claim Voucher : COBAGOFOOD090320A !\n";
+                echo "\033[31;1m[!] Mencoba Claim Voucher : COBAGOFOOD090320A !\n";
                 sleep(3);
                 goto ride;
             }
@@ -55,12 +55,12 @@ if ($register == false)
             if ($claim == false){
             echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually\n";
 			      sleep(3);
-            echo "\033[31;1m0[!] Mencoba Claim Voucher :COBAINGORIDE !\n";
+            echo "\033[31;1m[!] Mencoba Claim Voucher :COBAINGORIDE !\n";
             sleep(3);
             }else{
                 echo "\e[+] ".$claim."\n";
 				    sleep(3);
-                echo "\033[31;1m0[!] Mencoba Claim Voucher : COBAINGORIDEPAY !\n";
+                echo "\033[31;1m[!] Mencoba Claim Voucher : COBAINGORIDEPAY !\n";
                 sleep(3);
                 goto pengen;
             }
