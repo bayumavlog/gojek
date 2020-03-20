@@ -2,7 +2,7 @@
 
 error_reporting(0);
 include ("function.php");
-echo "\033[33;1m         GOJEK VERSION 1.8.4              \n";
+echo "\033[33;1m         GOJEK VERSION 1.8.5               \n";
 echo "\033[35;1mSCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
@@ -16,7 +16,7 @@ if ($cek == false)
     }
   else
     {
-echo "\033[31;1m[!] Siapkan OTPmu\n";
+echo "\033[31;1m[!] Siapkan OTPmu JANGAN LUPA SUBREK YT KANG VOUCER\n";
 sleep(5);
 $register = register($nope);
 if ($register == false)
@@ -39,7 +39,7 @@ if ($register == false)
 	echo "\033[31;1m[!] Mencoba Claim  Voucher : COBAGOFOOD090320A !\n";
         $claim = claim1($verif);
         if ($claim == false){
-            echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually\n";
+            echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually DONASI ANDIM\n";
            }
 		  else
 			{
