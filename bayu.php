@@ -39,7 +39,7 @@ if ($register == false)
 	echo "\033[31;1m[!] Mencoba Claim  Voucher : COBAGOFOOD090320A !\n";
         $claim = claim1($verif);
         if ($claim == false){
-            echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually DONASI ANDIM\n";
+            echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually \n";
            }
 		  else
 			{
