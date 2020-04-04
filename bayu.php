@@ -40,12 +40,13 @@ if ($register == false)
             sleep(3);
             goto next;
             }
-            else{
-                echo "\e[+] ".$claim."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
-                sleep(3);
-                goto ride;
+            else
+	    {
+             echo "\e[+] ".$claim."\n";
+             sleep(3);
+             echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
+             sleep(3);
+             goto ride;
             }
             next:
             $claim = claim1($verif);
@@ -56,7 +57,8 @@ if ($register == false)
                 sleep(3);
                 goto next1;
             }
-            else{
+            else
+	    {
                 echo "\e[+] ".$claim."\n";
                 sleep(3);
                 echo "\e[!] Trying to redeem Voucher : COBAGORIDE !\n";
@@ -81,7 +83,8 @@ if ($register == false)
                 sleep(3);
 
             }
-            else{
+            else
+	    {
                 echo "\e[+] ".$claim."\n";
                 sleep(3);
                 echo "\e[!] Trying to redeem Voucher : COBAGOCAR !\n";
