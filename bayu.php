@@ -1,32 +1,33 @@
 <?php
 
 error_reporting(0);
-include ("function.php");
-echo "\033[33;1m         GOJEK VERSION 1.8.6              \n";
-echo "\033[35;1mSCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
+include ("func.php");
+echo "\n";
+echo "\e            GOJEK VERSION 2.0              \n";
+echo "\e SCRIPT GOJEK AUTO REGISTER + AUTO CLAIM VOUCHER BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
-echo "\033[32;1m[?] Masukkan Nomor HP Anda wanji 628*** : ";
+echo "\e[?] Masukkan Nomor HP Anda (62) : ";
 $nope = trim(fgets(STDIN));
 $cek = cekno($nope);
 if ($cek == false)
     {
-    echo "\033[35;1m1[x] Nomor Telah Terdaftar\n";
+    echo "\e[x] Nomor Telah Terdaftar\n";
 			goto nope;
     }
   else
     {
-echo "\033[31;1m[!] Siapkan OTPmu JANGAN LUPA SUBREK YT KANG VOUCER\n";
+echo "\e[!] Siapkan OTPmu\n";
 sleep(5);
-$register = register($nope);
+$register = register('1'.$nope);
 if ($register == false)
     {
-    echo "\033[35;1m[x] Gagal Mendapatkan OTP! Harap Gunakan Nomer Yang Belum Terdaftar DI GOJEK\n";
+    echo "\e[x] Failed Get OTP!\n";
     }
   else
     {
     otp:
-    echo "\033[33;1m [!] Masukkan Kode Verifikasi (OTP) : ";
+    echo "\e[!] Masukkan Kode Verifikasi (OTP) : ";
     $otp = trim(fgets(STDIN));
     $verif = verif($otp, $register);
     if ($verif == false)
@@ -35,21 +36,75 @@ if ($register == false)
         goto otp;
         }
       else
-        {
-	echo "\033[31;1m[!] Mencoba Claim  Voucher :COBAGOFOOD010420A !\n";
-        $claim = claim1($verif);
-        if ($claim == false){
-            echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually \n";
-         }
-       else
-	 {	      
-         echo "\033[31;1m[!] Mencoba Claim  Voucher :COBAGOFOOD010420B !\n";
-        $claim = claim1($verif);
-        if ($claim == false){
-            echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually \n";
-	      }else{
-                echo "\e[+] ".$claim."\n";
+        {      
+			echo "\e[!] Trying to redeem Voucher : GOFOODSANTAI19 !\n";
+        sleep(3);
+        $claim = claim($verif);
+        if ($claim == false)
+            {
+            echo "\e[!]".$claim."\n";
+            sleep(3);
+            echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420A !\n";
+            sleep(3);
+            goto next;
             }
+            else{
+                echo "\e[+] ".$claim."\n";
+                sleep(3);
+                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
+                sleep(3);
+                goto ride;
+            }
+            next:
+            $claim = claim1($verif);
+            if ($claim == false) {
+                echo "\e[!]".$claim['data']['message']."\n";
+                sleep(3);
+                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
+                sleep(3);
+                goto next1;
+            }
+            else{
+                echo "\e[+] ".$claim."\n";
+                sleep(3);
+                echo "\e[!] Trying to redeem Voucher : COBAGORIDE !\n";
+                sleep(3);
+                goto ride;
+            }
+            next1:
+            $claim = claim2($verif);
+            if ($claim == false) {
+                echo "\e[!]".$claim['errors'][0]['message']."\n";
+                sleep(3);
+                echo "\e[!] Trying to redeem Voucher : COBAGOCAR !\n";
+                sleep(3);
+                goto ride;
+            }
+            ride:
+            $claim = ride($verif);
+            if ($claim == false ) {
+                echo "\e[!]".$claim['errors'][0]['message']."\n";
+                sleep(3);
+                echo "\e[!] Trying to redeem Voucher : COBAGOCAR !\n";
+                sleep(3);
+
+            }
+            else{
+                echo "\e[+] ".$claim."\n";
+                sleep(3);
+                echo "\e[!] Trying to redeem Voucher : COBAGOCAR !\n";
+                sleep(3);
+                goto pengen;
+            }
+            pengen:
+            $claim = cekvocer($verif);
+            if ($claim == false ) {
+                echo "\VOUCHER INVALID/GAGAL REDEEM\n";
+            }
+            else{
+                echo "\e[+] ".$claim."\n";
+                
+        }
     }
     }
     }
