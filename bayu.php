@@ -1,33 +1,32 @@
 <?php
 
 error_reporting(0);
-include ("func.php");
-echo "\n";
-echo "\e            GOJEK VERSION 2.0              \n";
-echo "\e SCRIPT GOJEK AUTO REGISTER + AUTO CLAIM VOUCHER BAYU DWI DIRGANTARA\n";
+include ("function.php");
+echo "\033[33;1m         GOJEK VERSION 1.8.6              \n";
+echo "\033[35;1mSCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
-echo "\e[?] Masukkan Nomor HP Anda (62) : ";
+echo "\033[32;1m[?] Masukkan Nomor HP Anda wanji 628*** : ";
 $nope = trim(fgets(STDIN));
 $cek = cekno($nope);
 if ($cek == false)
     {
-    echo "\e[x] Nomor Telah Terdaftar\n";
+    echo "\033[35;1m1[x] Nomor Telah Terdaftar\n";
 			goto nope;
     }
   else
     {
-echo "\e[!] Siapkan OTPmu\n";
+echo "\033[31;1m[!] Siapkan OTPmu JANGAN LUPA SUBREK YT KANG VOUCER\n";
 sleep(5);
-$register = register('1'.$nope);
+$register = register($nope);
 if ($register == false)
     {
-    echo "\e[x] Failed Get OTP!\n";
+    echo "\033[35;1m[x] Gagal Mendapatkan OTP! Harap Gunakan Nomer Yang Belum Terdaftar DI GOJEK\n";
     }
   else
     {
     otp:
-    echo "\e[!] Masukkan Kode Verifikasi (OTP) : ";
+    echo "\033[33;1m [!] Masukkan Kode Verifikasi (OTP) : ";
     $otp = trim(fgets(STDIN));
     $verif = verif($otp, $register);
     if ($verif == false)
