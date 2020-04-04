@@ -47,11 +47,12 @@ if ($register == false)
         $claim = claim1($verif);
         if ($claim == false){
             echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually \n";
-	      else
-			{
-			echo $claim . "\n";
-			}
-		}
-	}
-}
+	      }else{
+                echo "\e[+] ".$claim."\n";
+            }
+    }
+    }
+    }
+
+
 ?>
