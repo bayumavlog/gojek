@@ -35,14 +35,7 @@ if ($register == false)
         goto otp;
         }
       else
-        {      
-			echo "\e[!] Trying to redeem Voucher : GOFOODSANTAI19 !\n";
-        sleep(3);
-        $claim = claim($verif);
-        if ($claim == false)
-            {
-            echo "\e[!]".$claim."\n";
-            sleep(3);
+        { 
             echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420A !\n";
             sleep(3);
             goto next;
