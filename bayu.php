@@ -33,76 +33,48 @@ if ($register == false)
         {
         echo "\e[x] Kode Verifikasi Salah\n";
         goto otp;
+        goto otp;
         }
       else
-        { 
-            echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420A !\n";
-            sleep(3);
-            goto next;
-            }
-            else
-	    {
-             echo "\e[+] ".$claim."\n";
-             sleep(3);
-             echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
-             sleep(3);
-             goto ride;
-            }
-            next:
-            $claim = claim1($verif);
-            if ($claim == false) {
-                echo "\e[!]".$claim['data']['message']."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
-                sleep(3);
-                goto next1;
-            }
-            else
-	    {
+        {
+	echo "\e[!] Trying to redeem Voucher : CCOBAGOFOOD010420A !\n";
+        $claim = claim1($verif);
+        if ($claim == false){
+            echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
+			      sleep(3);
+            echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
+			      goto ride;
+            }else{
                 echo "\e[+] ".$claim."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : COBAGORIDE !\n";
-                sleep(3);
-                goto ride;
-            }
-            next1:
-            $claim = claim2($verif);
-            if ($claim == false) {
-                echo "\e[!]".$claim['errors'][0]['message']."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : COBAGOCAR !\n";
+				    sleep(3);
+                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
                 sleep(3);
                 goto ride;
             }
             ride:
             $claim = ride($verif);
-            if ($claim == false ) {
-                echo "\e[!]".$claim['errors'][0]['message']."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : COBAGOCAR !\n";
-                sleep(3);
-
-            }
-            else
-	    {
+            if ($claim == false){
+            echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
+			      sleep(3);
+            echo "\e[!] Trying to redeem Voucher : CCOBAGOFOOD010420A !\n";
+            sleep(3);
+            }else{
                 echo "\e[+] ".$claim."\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher : COBAGOCAR !\n";
+				    sleep(3);
+                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
                 sleep(3);
                 goto pengen;
             }
             pengen:
             $claim = cekvocer($verif);
             if ($claim == false ) {
-                echo "\VOUCHER INVALID/GAGAL REDEEM\n";
-            }
-            else{
-                echo "\e[+] ".$claim."\n";
-                
-        }
-    }
-    }
-    }
-
-
+            echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
+           }
+		  else
+			{
+			echo $claim . "\n";
+			}
+		}
+	}
+}
 ?>
