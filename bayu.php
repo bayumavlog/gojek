@@ -2,7 +2,7 @@
 
 error_reporting(0);
 include ("function.php");
-echo "\033[33;1m         GOJEK VERSION 1.8.5               \n";
+echo "\033[33;1m         GOJEK VERSION 1.8.6              \n";
 echo "\033[35;1mSCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
@@ -36,12 +36,18 @@ if ($register == false)
         }
       else
         {
-	echo "\033[31;1m[!] Mencoba Claim  Voucher : G-8DBQHP5 !\n";
+	echo "\033[31;1m[!] Mencoba Claim  Voucher :COBAGOFOOD010420A !\n";
         $claim = claim1($verif);
         if ($claim == false){
             echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually \n";
-           }
-		  else
+         }
+       else
+	 {	      
+         echo "\033[31;1m[!] Mencoba Claim  Voucher :COBAGOFOOD010420B !\n";
+        $claim = claim1($verif);
+        if ($claim == false){
+            echo "\033[34;1m[!] Gagal claim otomatis, Silahkan Claim Manually \n";
+	      else
 			{
 			echo $claim . "\n";
 			}
