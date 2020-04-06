@@ -37,7 +37,7 @@ if ($register == false)
       else
         {
 	    $claims = food($verif);
-		echo "\e[!] Trying to redeem Voucher : " COBAGOFOOD010420A " !\n";
+		echo "\e[!] Trying to redeem Voucher : ".$claims." !\n";
 		$h=fopen("".$claims.".txt","a");
 		fwrite($h,json_encode(array('token' => $verif, 'voc' => $claims))."\n");
 		fclose($h); 
