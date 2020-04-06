@@ -38,7 +38,7 @@ if ($register == false)
         {
 		echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420A !\n";
         sleep(3);
-        $claim = claim($verif);
+        $claim = cekvocer($verif);
         if ($claim == false)
             {
             echo "\e[!]".$claim."\n";
