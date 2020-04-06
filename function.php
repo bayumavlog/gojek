@@ -1,17 +1,17 @@
 <?php
 ###Original From###
 ###https://github.com/osyduck/Gojek-Register###
-//bayumavlog
+//ikiganteng
 function request($url, $token = null, $data = null, $pin = null){
 $header[] = "Host: api.gojekapi.com";
 $header[] = "User-Agent: okhttp/3.12.1";
 $header[] = "Accept: application/json";
 $header[] = "Accept-Language: ID";
 $header[] = "Content-Type: application/json; charset=UTF-8";
-$header[] = "X-AppVersion: 3.49.2"; // ubah sesuai clone lu
+$header[] = "X-AppVersion: 3.46.1"; // ubah sesuai clone lu
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
 $header[] = "Connection: keep-alive";
-$header[] = "X-User-Locale: ID";
+$header[] = "X-User-Locale: en_ID";
 $header[] = "X-Location: -6.594042,106.806542";
 $header[] = "X-Location-Accuracy: 3.0";
 if ($pin):
@@ -67,7 +67,7 @@ function register($no)
     {
     $nama = nama();
     $email = str_replace(" ", "", $nama) . mt_rand(1000, 9999);
-    $data = '{"email":"'.$email.'@gmail.com","BANGBAY":"'.$nama.'","phone":"+'.$no.'","signed_up_country":"ID"}';
+    $data = '{"email":"'.$email.'@gmail.com","name":"'.$nama.'","phone":"+'.$no.'","signed_up_country":"ID"}';
     $register = request("/v5/customers", "", $data);
     if ($register['success'] == 1)
         {
@@ -155,7 +155,7 @@ function verif($otp, $token)
 
 function claims($token,$voc)
     {
-    $data = '{"promo_code":" COBAGOFOOD010420A "}';   
+    $data = '{"promo_code":"COBAGOFOOD010420A "}';   
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -170,6 +170,62 @@ function claims($token,$voc)
 
     function claim1($token)
     {
+    $data = '{"promo_code":"COBAGOFOOD010420A"}';    
+    $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
+    if ($claim['success'] == 1)
+        {
+        return $claim['data']['message'];
+        }
+      else
+        {
+      save("error_log.txt", json_encode($claim));
+        return false;
+        }
+    }
+    function claim2($token)
+    {
+    $data = '{"promo_code":"COBAGOFOOD010420B"}';    
+    $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
+    if ($claim['success'] == 1)
+        {
+        return $claim['data']['message'];
+        }
+      else
+        {
+      save("error_log.txt", json_encode($claim));
+        return false;
+        }
+    }
+     function ride($token)
+    {
+    $data = '{"promo_code":""}';    
+    $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
+    if ($claim['success'] == 1)
+        {
+        return $claim['data']['message'];
+        }
+      else
+        {
+      save("error_log.txt", json_encode($claim));
+          return false;
+        }
+    }
+     function cekvocer($token)
+    {
+    $data = '{"promo_code":" COBAGOFOOD010420A "}';    
+    $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
+    if ($claim['success'] == 1)
+        {
+        return $claim['data']['message'];
+        }
+      else
+        {
+      save("error_log.txt", json_encode($claim));
+        return false;
+        }
+    }
+     function pengen($token)
+    {
     $data = '{"promo_code":" COBAGOFOOD010420B "}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
@@ -181,6 +237,22 @@ function claims($token,$voc)
       save("error_log.txt", json_encode($claim));
         return false;
         }
+    }
+
+function reff($token)
+    {
+    $data = '{"referral_code":""}';    
+    $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
+    if ($claim['success'] == 1)
+        {
+        return $claim['data']['message'];
+        }
+      else
+        {
+      save("error_log.txt", json_encode($claim));
+        return false;
+        }
+    }
 	
 	function cekno($no)
     {
