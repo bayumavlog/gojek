@@ -47,7 +47,7 @@ if ($register == false)
 		echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
 			      sleep(3);
             echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420A !\n";
-			      goto ride;
+			      goto food;
             }else{
                 echo "\e[+] ".$claim."\n";
 				    sleep(3);
