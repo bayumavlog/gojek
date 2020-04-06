@@ -44,18 +44,19 @@ if ($register == false)
         sleep(3);
         $claim = claims($verif,$claims);
         if ($claim == false){
-		echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
+            echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
 			      sleep(3);
             echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420A !\n";
+			      goto ride;
             }else{
                 echo "\e[+] ".$claim."\n";
 				    sleep(3);
-                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
+                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420A !\n";
                 sleep(3);
-                goto next;
+                goto ride;
             }
-            food:
-            $claim = food($verif);
+            ride:
+            $claim = ride($verif);
             if ($claim == false){
             echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
 			      sleep(3);
@@ -64,7 +65,7 @@ if ($register == false)
             }else{
                 echo "\e[+] ".$claim."\n";
 				    sleep(3);
-                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420A !\n";
+                echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
                 sleep(3);
                 goto pengen;
             }
