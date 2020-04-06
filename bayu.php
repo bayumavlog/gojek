@@ -36,9 +36,17 @@ if ($register == false)
         }
       else
         {
+	    $claims = food($verif);
+		echo "\e[!] Trying to redeem Voucher : ".$claims." !\n";
+		$h=fopen("".$claims.".txt","a");
+		fwrite($h,json_encode(array('token' => $verif, 'voc' => $claims))."\n");
+		fclose($h); 
+        sleep(3);
+        $claim = claims($verif,$claims);
+        if ($claim == false){
 		echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420A !\n";
         sleep(3);
-        $claim = cekvocer($verif);
+        $claim = claim($verif);
         if ($claim == false)
             {
             echo "\e[!]".$claim."\n";
