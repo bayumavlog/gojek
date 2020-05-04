@@ -2,7 +2,7 @@
 
 error_reporting(0);
 include ("function.php");
-echo "\033[33;1m         GOJEK VERSION 1.8.7              \n";
+echo "\033[33;1m         GOJEK VERSION 1.8.8              \n";
 echo "\033[35;1mSCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
 echo "\n";
 nope:
@@ -36,14 +36,14 @@ if ($register == false)
         }
       else
         {      
-			echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420A !\n";
+			echo "\e[!] Trying to redeem Voucher : EBADAHMAKAN !\n";
         sleep(3);
         $claim = claim($verif);
         if ($claim == false)
             {
             echo "\e[!]".$claim."\n";
             sleep(3);
-            echo "\e[!] Trying to redeem Voucher : COBAGOFOOD010420B !\n";
+            echo "\e[!] Trying to redeem Voucher : AXEANTIMATIGAYA !\n";
             sleep(3);
             goto next;
             }
