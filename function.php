@@ -15,7 +15,7 @@ $header[] = "X-User-Locale: en_ID";
 $header[] = "X-Location: -7.271741,112.723124";
 $header[] = "X-Location-Accuracy: 3.0";
 if ($pin):
-$header[] = "pin: $pin";
+$header[] = "112233: $pin";
     endif;
 if ($token):
 $header[] = "Authorization: Bearer $token";
@@ -113,7 +113,7 @@ function veriflogin($otp, $token)
     }
 function change($no)
 {
-    $data = '{"email":"' .$email . '","name":"'.$nama.'","phone":"+'.$no.'"}';
+    $data = '{"email":"' .$email . '","MURID KANG BAY":"'.$name.'","phone":"0'.$no.'"}';
     $change = request("/v4/customers" ,"", $data);
     if ($change['success'] == 1) {
         return $change;
@@ -170,7 +170,7 @@ function claims($token,$voc)
 
     function claim1($token)
     {
-    $data = '{"promo_code":"AXEANTIMATIGAYA"}';    
+    $data = '{"promo_code":"PESANGOFOOD0607"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -184,7 +184,7 @@ function claims($token,$voc)
     }
     function claim2($token)
     {
-    $data = '{"promo_code":"COBAGOFOOD010420B"}';    
+    $data = '{"promo_code":"PESANGOFOOD0607"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
