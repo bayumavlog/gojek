@@ -45,16 +45,7 @@ if ($register == false)
             sleep(3);
             echo "\e[!] Trying to redeem Voucher :PESANGOFOOD0607\n";
             sleep(3);
-            goto next;
-            }
-            else{
-                echo "\e[+] ".$claim."\n";
-                sleep(3);
-                echo "\e[+] ".$claim."PESANGOFOOD0607\n";
-                sleep(3);
-                echo "\e[!] Trying to redeem Voucher :\n";
-                sleep(3);
-                goto pengen;
+            goto pengen;
             }
             pengen:
             $claim = cekvocer($verif);
