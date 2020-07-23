@@ -12,7 +12,7 @@ $header[] = "X-AppVersion: 3.46.1"; // ubah sesuai clone lu
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
 $header[] = "Connection: keep-alive";
 $header[] = "X-User-Locale: en_ID";
-$header[] = "X-Location: -7.271741,112.723124";
+$header[] = "X-Location:-6.872290, 109.120683";
 $header[] = "X-Location-Accuracy: 3.0";
 if ($pin):
 $header[] = "112233: $pin";
@@ -67,7 +67,7 @@ function register($no)
     {
     $nama = nama();
     $email = str_replace(" ", "", $nama) . mt_rand(1000, 9999);
-    $data = '{"email":"'.$email.'@gmail.com","name":"'.$nama.'","phone":"+'.$no.'","signed_up_country":"ID"}';
+    $data = '{"email":"'.$email.'@gmail.com","bang bay":"'.$nama.'","phone":"+'.$no.'","signed_up_country":"ID"}';
     $register = request("/v5/customers", "", $data);
     if ($register['success'] == 1)
         {
