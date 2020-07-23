@@ -43,11 +43,13 @@ if ($register == false)
             {
             echo "\e[!]".$claim." PESANGOFOOD0607 \n";
             sleep(3);
-            echo "\e[!] Trying to redeem Voucher :cPESANGOFOOD0607\n";
+            echo "\e[!] Trying to redeem Voucher :PESANGOFOOD0607\n";
             sleep(3);
             goto next;
             }
             else{
+                echo "\e[+] ".$claim."\n";
+                sleep(3);
                 echo "\e[+] ".$claim."PESANGOFOOD0607\n";
                 sleep(3);
                 echo "\e[!] Trying to redeem Voucher :\n";
