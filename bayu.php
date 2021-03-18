@@ -1,10 +1,15 @@
 <?php
-
 error_reporting(0);
 include ("function.php");
-echo "\033[33;1m         jangan maruk anjing              \n";
-echo "\033[35;1mSCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
-echo "\n";
+echo "\033[33;1m         SELAMAT DATANG DI SCRIPT REGISTRASI BAYU MAVLOG             \n";
+
+echo "\033[34;1m          SCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
+echo "        __     _ _    __  _   _       _    _     _ _     _ _      _    __ _  @BAYU MAVLOG
+      | _  )  / \  \ /  /| | | |     |  \/  |   / \ \   / / |   / _ \ /  _ |
+      | _ /  / _ \  V  / | | | |     | |\/| |  / _ \ \ / /| |  | | | | |  _
+      | _  )/ __  \   |  | | | |     | |  | | /  _  \ V / | |_ | |_| |_|_| |
+      | _ //     \_\ _|   \ _ /      | |  | |/ /  \  \_/  |___| \ _ / \ _ _|\n";
+
 nope:
 echo "\033[32;1m[?] Masukkan Nomor HP Anda Yang Belum Terdaftar Di Gojek : ";
 $nope = trim(fgets(STDIN));
@@ -62,3 +67,4 @@ if ($register == false)
 
 
 ?>
+
