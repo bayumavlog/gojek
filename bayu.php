@@ -39,32 +39,22 @@ if ($register == false)
         echo "\e[x] Kode Verifikasi Salah\n";
         goto otp;
         }
-      else
-        {      
-		echo "\e[!] Trying to redeem Voucher :COBAINGOJEK!\n";
-        sleep(3);
-        $claim = claim($verif);
-        if ($claim == false)
-            {
-            echo "\e[!]".$claim." JALANHEMAT \n";
-            sleep(3);
-            echo "\e[!] Trying to redeem Voucher :JALANHEMAT\n";
-            sleep(3);
-            goto pengen;
-            }
-            pengen:
-            $claim = cekvocer($verif);
-            if ($claim == false ) {
-                echo "\VOUCHER INVALID/GAGAL REDEEM\n";
-            }
-            else{
+        else
+        {
+		$h=fopen("newgojek.txt","a");
+		fwrite($h,json_encode(array('token' => $verif, 'voc' => 'gofood gak ada'))."\n");
+		fclose($h); 
+                echo "\e[!] Trying to redeem Reff : AYOCOBAGOJEK !\n";
+                sleep(3);
+            $claim = reff($verif);
+            if ($claim == false){
+            echo "\e[!] Failed to Claim Voucher, Try to Claim Manually\n";
+            }else{
                 echo "\e[+] ".$claim."\n";
-                
             }
-        }
-		}
+    }
+    }
     }
 
 
 ?>
-
