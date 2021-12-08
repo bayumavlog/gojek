@@ -1,18 +1,19 @@
 <?php
-function request($url, $token = null, $data = null, $pin = null){
+
+function request($url, $token = null, $data = null, $pin = null, $otpsetpin = null, $uuid = null){
 $header[] = "Host: api.gojekapi.com";
-$header[] = "User-Agent: okhttp/3.12.1";
+$header[] = "User-Agent: okhttp/3.10.0";
 $header[] = "Accept: application/json";
-$header[] = "Accept-Language: ID";
+$header[] = "Accept-Language: id-ID";
 $header[] = "Content-Type: application/json; charset=UTF-8";
-$header[] = "X-AppVersion: 3.46.1"; // ubah sesuai clone lu
+$header[] = "X-AppVersion: 4.32.1";
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
 $header[] = "Connection: keep-alive";
-$header[] = "X-User-Locale: en_ID";
-$header[] = "X-Location:-6.872290, 109.120683";
-$header[] = "X-Location-Accuracy: 3.0";
+$header[] = "X-User-Locale: id_ID";
+$header[] = "X-Location: -6.934728, 107.626160";
+$header[] = "X-Location-Accuracy: 0.0";
 if ($pin):
-$header[] = "112233: $pin";
+$header[] = "pin: $pin";
     endif;
 if ($token):
 $header[] = "Authorization: Bearer $token";
@@ -64,8 +65,8 @@ function register($no)
     {
     $nama = nama();
     $email = str_replace(" ", "", $nama) . mt_rand(1000, 9999);
-    $data = '{"email":"'.$email.'@gmail.com","bang bay":"'.$nama.'","phone":"+'.$no.'","signed_up_country":"ID"}';
-    $register = request("/v5/customers", "", $data);
+    $data = '{"email":"'.$email.'@gmail.com","name":"'.$nama.'","phone":"+'.$no.'","signed_up_country":"ID"}';
+    $register = request("/v5/customers"," ", $data);
     if ($register['success'] == 1)
         {
         return $register['data']['otp_token'];
@@ -110,7 +111,7 @@ function veriflogin($otp, $token)
     }
 function change($no)
 {
-    $data = '{"email":"' .$email . '","MURID KANG BAY":"'.$name.'","phone":"0'.$no.'"}';
+    $data = '{"email":"' .$email . '","KANG BAY":"'.$nama.'","phone":"+'.$no.'"}';
     $change = request("/v4/customers" ,"", $data);
     if ($change['success'] == 1) {
         return $change;
@@ -152,7 +153,7 @@ function verif($otp, $token)
 
 function claims($token,$voc)
     {
-    $data = '{"promo_code":"EBADAHMAKAN "}';   
+    $data = '{"promo_code":"'.$voc.'"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -167,7 +168,7 @@ function claims($token,$voc)
 
     function claim1($token)
     {
-    $data = '{"promo_code":"PESANGOFOOD0607"}';    
+    $data = '{"promo_code":"GOFOODSANTAI11"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -181,7 +182,7 @@ function claims($token,$voc)
     }
     function claim2($token)
     {
-    $data = '{"promo_code":"PESANGOFOOD0607"}';    
+    $data = '{"promo_code":"GOFOODSANTAI08"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -195,7 +196,7 @@ function claims($token,$voc)
     }
      function ride($token)
     {
-    $data = '{"promo_code":""}';    
+    $data = '{"promo_code":"COBAINGOJEK"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -209,7 +210,7 @@ function claims($token,$voc)
     }
      function cekvocer($token)
     {
-    $data = '{"promo_code":" COBAGOFOOD010420A "}';    
+    $data = '{"promo_code":"AYOCOBAGOJEK"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -223,7 +224,7 @@ function claims($token,$voc)
     }
      function pengen($token)
     {
-    $data = '{"promo_code":" COBAGOFOOD010420B "}';    
+    $data = '{"promo_code":"G-7RCBDYN"}';    
     $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
     if ($claim['success'] == 1)
         {
@@ -238,7 +239,7 @@ function claims($token,$voc)
 
 function reff($token)
     {
-    $data = '{"referral_code":""}';    
+    $data = '{"referral_code":"G-75SR565"}';    
     $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
     if ($claim['success'] == 1)
         {
