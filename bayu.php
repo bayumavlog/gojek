@@ -3,7 +3,7 @@ error_reporting(0);
 include ("function.php");
 echo "\033[33;1m         SELAMAT DATANG DI SCRIPT REGISTRASI BAYU MAVLOG             \n";
 
-echo "\033[34;1m          SCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n";
+echo "\033[34;1m          SCRIPT GOJEK REGISTRASI BAYU DWI DIRGANTARA\n\n";
 echo "        __     _ _    __  _   _       _    _     _ _     _ _      _    __ _  @BAYU MAVLOG
       | _  )  / \  \ /  /| | | |     |  \/  |   / \ \   / / |   / _ \ /  _ |
       | _ /  / _ \  V  / | | | |     | |\/| |  / _ \ \ / /| |  | | | | |  _
@@ -21,17 +21,17 @@ if ($cek == false)
     }
   else
     {
-echo "\033[31;1m[!] Siapkan OTPmu JANGAN LUPA SUBREK YT BAYU MAVLOG\n";
+echo "\033[31;1m[!] Siapkan OTPmu JANGAN LUPA SUBSCRIBE YT BAYU MAVLOG\n";
 sleep(5);
 $register = register($nope);
 if ($register == false)
-    {
+    { 
     echo "\033[35;1m[x] Gagal Mendapatkan OTP! Harap Gunakan Nomer Yang Belum Terdaftar DI GOJEK\n";
     }
   else
     {
     otp:
-    echo "\033[33;1m [!] Masukkan Kode Verifikasi (OTP) : ";
+    echo "\033[33;1m[!] Masukkan Kode Verifikasi (OTP) : ";
     $otp = trim(fgets(STDIN));
     $verif = verif($otp, $register);
     if ($verif == false)
@@ -41,14 +41,14 @@ if ($register == false)
         }
       else
         {      
-			echo "\e[!] Trying to redeem Voucher :PESANGOFOOD0607!\n";
+		echo "\e[!] Trying to redeem Voucher :COBAINGOJEK!\n";
         sleep(3);
         $claim = claim($verif);
         if ($claim == false)
             {
-            echo "\e[!]".$claim." PESANGOFOOD0607 \n";
+            echo "\e[!]".$claim." JALANHEMAT \n";
             sleep(3);
-            echo "\e[!] Trying to redeem Voucher :PESANGOFOOD0607\n";
+            echo "\e[!] Trying to redeem Voucher :JALANHEMAT\n";
             sleep(3);
             goto pengen;
             }
@@ -60,9 +60,9 @@ if ($register == false)
             else{
                 echo "\e[+] ".$claim."\n";
                 
+            }
         }
-    }
-    }
+		}
     }
 
 
