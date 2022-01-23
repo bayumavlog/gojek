@@ -11,7 +11,7 @@ echo "        __     _ _    __  _   _       _    _     _ _     _ _      _    __ 
       | _ //     \_\ _|   \ _ /      | |  | |/ /  \  \_/  |___| \ _ / \ _ _|\n";
 
 nope:
-echo "\033[32;1m[?] MAAF UNTUK SEMENTARA SCRIP INI TIDAK DAPAT DI GUNAKAN "; 
+echo "\033[32;1m\n\n MAAF UNTUK SEMENTARA SCRIP INI TIDAK DAPAT DI GUNAKAN \n\n"; 
 /*
 $nope = trim(fgets(STDIN));
 $cek = cekno($nope);
